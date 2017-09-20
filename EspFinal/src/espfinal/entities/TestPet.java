@@ -136,6 +136,7 @@ public class TestPet extends Entity implements Runnable {
         }
     }
 
+    
     //acsasd
     private float getFoodValueOnPos() {
 
