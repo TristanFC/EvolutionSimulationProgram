@@ -406,15 +406,17 @@ public class TestPet extends Entity implements Runnable {
         System.out.println("------------------------------------------------------------");
     }
  
-    public synchronized void start() {
+     public synchronized void start() {
         if (running) {
             return;
+
         }
-
         running = true;
-        thread = new Thread(TestPet(handler, x, y, widht, height, name, isNew));
-        thread.start();
 
+        thread = new Thread(this, threadName);
+
+        thread.start();
+        System.out.println("espfinal.entities.TestPet.start()");
     }
 
     public synchronized void stop() {
@@ -426,8 +428,11 @@ public class TestPet extends Entity implements Runnable {
         } catch (InterruptedException e) {
             Logger.getLogger(TestPet.class.getName()).log(Level.SEVERE, null, e);
         }
+        System.out.println("espfinal.entities.TestPet.stop()");
     }
 
+   
+    
     private Color getColor() {
 
         int r = (int) (Math.random() * 255);
