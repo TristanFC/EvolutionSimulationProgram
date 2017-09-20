@@ -53,7 +53,10 @@ public class World {
     public void tick() {
 
         if (handler.getPets().size() < 5) {
-            handler.getPets().add(new TestPet(handler, (float) Math.random() * width*Tile.TileWidht, (float) Math.random() * height*Tile.TileHeight, 25, 25,"Pet Thread",true));
+           TestPet tp = new TestPet(handler, (float) Math.random() * width*Tile.TileWidht, (float) Math.random() * height*Tile.TileHeight, 25, 25,"Pet Thread",true);
+          tp.start();
+           
+           handler.getPets().add(tp);
             System.out.println("espfinal.world.World.tick()");
         }
 

@@ -80,7 +80,7 @@ public class TestPet extends Entity implements Runnable {
         this.isNew = isNew;
         threadName = name;
         updaterotation(0);
-        start();
+        
         if (isNew) {
             energy = startEnergy;
 
